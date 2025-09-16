@@ -1,0 +1,30 @@
+mysql:
+  image:
+    repository: mysql
+    tag: "8.0"
+  storage:
+    size: 5Gi
+    storageClass: default
+
+wordpress:
+  image:
+    repository: wordpress
+    tag: latest
+  storage:
+    size: 5Gi
+    storageClass: default
+
+ingress:
+  enabled: true
+  host: wordpress.local
+  className: nginx
+
+secrets:
+  mysqlRootPassword: cm9vdHBhc3N3b3Jk
+  mysqlDatabase: d29yZHByZXNz
+  mysqlUser: d29yZHByZXNzdXNlcg==
+  mysqlPassword: d29yZHByZXNzcGFzcw==
+  wordpressAuthKey: YXV0aGtleXNlY3JldA==
+  wordpressSecureAuthKey: c2VjdXJlYXV0aGtleQ==
+  wordpressLoggedInKey: bG9nZ2VkaW5rZXk=
+  wordpressNonceKey: bm9uY2VrZXk=
