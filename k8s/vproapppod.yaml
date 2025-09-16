@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: vproapp1
+  namespace: kubekart
+  labels:
+     app: vproapp
+spec:
+  containers:
+    - name: appcontainer
+      image: kalyan5656/apacheimg:v1
+      ports:
+        - name: vproapp-port
+          containerPort: 8080
+
